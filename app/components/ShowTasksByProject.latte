@@ -1,0 +1,22 @@
+
+<table>
+<thead>
+
+	<tr><th><a n:href="tableSort!, $projectID,$orderChar.'8'">Pořadí</a></th><th><a n:href="tableSort!, $projectID,$orderChar.'1'">Úkol</a></th>
+		<th><a n:href="tableSort!, $projectID,$orderChar.'6'">Kdo řeší</a></th><th><a n:href="tableSort!, $projectID,$orderChar.'2'">Přidáno</a></th>
+		<th><a n:href="tableSort!, $projectID,$orderChar.'3'">Převzato</a></th><th><a n:href="tableSort!, $projectID,$orderChar.'4'">Ukončeno</a></th>
+		<th><a n:href="tableSort!, $projectID,$orderChar.'5'">Čas</a></th></tr>
+</thead>
+{foreach $tasks as $task}
+<tr><td>{$task->id}</td>
+	<td>{$task->text}</td>
+	<td>{$task->user->surname}</td>
+	<td>{$task->created|date: 'Y-m-d, H:i:s'}</td>
+	<td>{$task->assumed|date: 'Y-m-d, H:i:s'}</td>
+	<td>{$task->done|date: 'Y-m-d, H:i:s'}<a n:if="!$task->done" n:href="markDone! $task->id" class="icon tick">Ukončit</a></td>
+	<td>&nbsp;</td>
+</tr>	
+{/foreach}
+
+
+</table>

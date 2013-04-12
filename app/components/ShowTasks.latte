@@ -1,0 +1,21 @@
+
+<table>
+<thead>
+<tr><th>Pořadí</th><th>Projekt</th><th>Úkol</th><th>Kdo řeší</th><th>Přidáno</th><th>Převzato</th><th>Ukončeno</th><th>Čas</th></tr>
+</thead>
+
+{foreach $tasks as $task}
+<tr><td>{$task->id}</td>
+	<td>{$task->project->title}</td>
+	<td>{$task->text}</td>
+	<td>{$task->user->surname}</td>
+	<td>{$task->created|date: 'Y-m-d, H:i:s'}</td>
+	<td>{$task->assumed|date: 'Y-m-d, H:i:s'}</td>
+	<td>{$task->done|date: 'Y-m-d, H:i:s'}</td>
+	<td></td>
+</tr>	 
+{/foreach}
+
+</table>
+
+
