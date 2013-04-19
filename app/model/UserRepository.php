@@ -12,12 +12,12 @@ class UserRepository extends AbstractRepository
 	{
 		//$users = $this->database->table('user')->order('surname')->fetchPairs('id','surname');
 		
-		$users = $this->database->table('user')->order('surname');
+		$users = $this->database->table('user')->order('lastname');
 		$names = array();
 		
 		foreach ($users as $user)
 		{
-			$names[$user->id] = $user->surname . ' ' . $user->name;
+			$names[$user->id] = $user->lastname . ' ' . $user->firstname;
 		}
 		return $names;
 	}
@@ -34,6 +34,17 @@ class UserRepository extends AbstractRepository
 		return $users;	
 	}
 	
+	
+	public function insert($username, $firstname, $lastname, $email, $password)
+	{
+		$user = $this->database->table('user')->insert(array(
+			'username' 	=> $username,
+			'firstname' => $firstname,
+			'lastname'	=> $lastname,
+			'email'		=> $email,
+			'password'	=> $password
+		));
+	}
 	
 	
 }

@@ -10,7 +10,7 @@
 {foreach $tasks as $task}
 <tr><td>{$task->id}</td>
 	<td>{$task->text}</td>
-	<td>{$task->user->surname}</td>
+	<td>{$task->user->lastname}</td>
 	<td>{$task->created|date: 'Y-m-d, H:i:s'}</td>
 	<td>{$task->assumed|date: 'Y-m-d, H:i:s'}</td>
 	<td>{$task->done|date: 'Y-m-d, H:i:s'}<a n:if="!$task->done" n:href="markDone! $task->id" class="icon tick">Ukončit</a></td>

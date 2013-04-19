@@ -1,6 +1,30 @@
 @CHARSET "UTF-8";
 
 /*** Layout ***/
+
+.form-login {
+	text-width: 180px;
+	font-size: 10px;
+}
+
+.input-login {
+	height: 11px;
+	font-size: 10px;
+}
+
+.input-submit {
+	height: 20px;
+	font-size: 10px;
+	width: 50px;
+}
+
+.form-register {
+	text-width: 0px;
+	width:40%;
+	float:left
+}
+
+
 body {
 	font: 14px/1.5 sans-serif;
 	margin: 0;

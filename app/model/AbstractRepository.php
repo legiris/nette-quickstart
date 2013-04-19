@@ -1,20 +1,14 @@
 <?php
 
-class AbstractRepository extends Nette\Object
+class AbstractRepository extends Nette\Object //implements Security\IAuthenticator
 {
-	public $database;
+	protected $database;
 	
 	
 	public function __construct(Nette\Database\Connection $database)
 	{
 		$this->database = $database;
 	}
-	
-	
-	
-	
-	
-
 	
 	
 }

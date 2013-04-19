@@ -14,7 +14,7 @@ class ProjectRepository extends AbstractRepository
 	
 	/**
 	 * vybere radek z databaze, funkce find() vrati pole, fetch() jeden radek
-	 * @param id
+	 * @param int $id
 	 * return row
 	 */
 	public function loadByID($id)

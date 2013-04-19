@@ -12,7 +12,7 @@ class HomepagePresenter extends BasePresenter
 	{		
 		$this->template->tasks = $this->context->taskRepository->fetchAll();	
 	}
-
+	
 	
 	protected function createComponentShowTasks()
 	{

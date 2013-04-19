@@ -30,18 +30,34 @@
 
 	<div id="sidebar">
 		
+		{if !$user->isLoggedIn()}
+			<div class="form-login">
+			{form loginForm}
+			{control $form errors}
+			<table>
+			<tr><td>{label username /}</td><td colspan="2">{input username}</td></tr>
+			<tr><td>{label password /}</td><td>{input password}</td><td>{input login}</td></tr>
+			</table>
+			{/form}
+		{else}
+			<div class="form-login">
+			<p>Přihlášený uživatel<br />
+			   <strong>kobra</strong><br />
+			   <a href="" title="Nastavení účtu">nastavení</a>&nbsp;&nbsp;&nbsp;&nbsp;<a n:href="logout!" title="Odhlásit se">odhlášení</a></p>	
+		{/if}
+		</div>
+		
 		<h2>Projekty</h2>
 		<ul>
-			
 			{foreach $projects as $project}
 				<li><a href="{link Task: id => $project->id}">{$project->title}</a></li>
 			{/foreach}
-			
 		</ul>
 		
 		<p><a href="http://www.seznam.cz" target = "_blank" onclick="window.open('http://www.seznam.cz', 'popup', 'width=400,height=600'); return false" title="">Přidat nový projekt</a></p>
-		
-	</div>	
+		<hr />
+		<p><a href="{$basePath}/registrace-noveho-uzivatele/">Registrace</a></p>
+	</div>	<!-- /sidebar -->	
 
 	
 	{include #content}

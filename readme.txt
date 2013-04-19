@@ -1,3 +1,37 @@
+TODO: nette
+=================
+- vlastni helper
+- stromova struktura
+- odkaz a vytvoreni samostatne stranky (viz BF diskuze)
+- ajax
+- prihlasovani uzivatelu
+- registrace + zaslani emailu
+- zapomenute heslo
+- trvale prihlaseni
+- dynamicke vyhledavani, vyhledavani na strance
+- google searcher
+- google analytics
+- strankovani
+- captcha
+- vlozeni souboru, fotky (+ zmenseni...)
+- chat
+
+Pozn.
+cíl: aplikace pod timto odkazem
+	 http://test.lamp/nette-login/sandbox/www/registrace-noveho-uzivatele/
+
+- vytvorit presenter v 'presenters'
+  	soubor 'registraceNovehoUzivatelePresenter.php', ve kterem definuji tridu
+  	'class registraceNovehoUzivatele{   }' -- pro test zobrazeni postaci i prazdna
+- vytvorit sablonu v 'templates'
+	slozka 'registraceNovehoUzivatele'
+	soubor 'default.latte' s obsahem:
+		{block content}
+			<p>Registrace nového uživatele</p>
+		{/block}
+
+
+
 Nette Framework Sandbox
 =======================
 
